@@ -1,0 +1,147 @@
+void main() {
+  // Define and initialize variables
+  int myInt = 10;
+  double myDouble = 10.5;
+  String myString = "Hello, Dart!";
+  bool myBool = true;
+  List<int> myList = [1, 2, 3, 4, 5];
+
+  print('Integer: $myInt');
+  print('Double: $myDouble');
+  print('String: $myString');
+  print('Boolean: $myBool');
+  print('List: $myList');
+
+  // Call conversion function
+  convertAndDisplay("42");
+  convertAndDisplay("10.99");
+
+  // Control Flow Statements
+  checkNumber(5); // Check if a number is positive, negative, or zero
+  checkVotingEligibility(20); // Check if a person is eligible to vote
+
+  printDayOfWeek(3); // Print day of the week using switch-case
+
+  // Loops
+  printNumbersFrom1To10();
+  printNumbersFrom10To1();
+  printNumbersFrom1To5();
+
+  // Complex Example
+  List<int> numbers = [3, 12, 25, 101];
+  processNumbers(numbers);
+}
+
+void convertAndDisplay(String numberStr) {
+  int numberInt = int.tryParse(numberStr) ?? 0;
+  double numberDouble = double.tryParse(numberStr) ?? 0.0;
+
+  print('Original String: $numberStr');
+  print('Converted to int: $numberInt');
+  print('Converted to double: $numberDouble');
+}
+
+void checkNumber(int number) {
+  if (number > 0) {
+    print('$number is positive');
+  } else if (number < 0) {
+    print('$number is negative');
+  } else {
+    print('$number is zero');
+  }
+}
+
+void checkVotingEligibility(int age) {
+  if (age >= 18) {
+    print('Eligible to vote');
+  } else {
+    print('Not eligible to vote');
+  }
+}
+
+void printDayOfWeek(int day) {
+  switch (day) {
+    case 1:
+      print('Monday');
+      break;
+    case 2:
+      print('Tuesday');
+      break;
+    case 3:
+      print('Wednesday');
+      break;
+    case 4:
+      print('Thursday');
+      break;
+    case 5:
+      print('Friday');
+      break;
+    case 6:
+      print('Saturday');
+      break;
+    case 7:
+      print('Sunday');
+      break;
+    default:
+      print('Invalid day');
+  }
+}
+
+void printNumbersFrom1To10() {
+  print('For loop:');
+  for (int i = 1; i <= 10; i++) {
+    print(i);
+  }
+}
+
+void printNumbersFrom10To1() {
+  print('While loop:');
+  int i = 10;
+  while (i > 0) {
+    print(i);
+    i--;
+  }
+}
+
+void printNumbersFrom1To5() {
+  print('Do-while loop:');
+  int i = 1;
+  do {
+    print(i);
+    i++;
+  } while (i <= 5);
+}
+
+void processNumbers(List<int> numbers) {
+  for (int number in numbers) {
+    print('Number: $number');
+    
+    // Check if the number is even or odd
+    if (number % 2 == 0) {
+      print('$number is even');
+    } else {
+      print('$number is odd');
+    }
+
+    // Categorize numbers using a switch-case
+    switch (number) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+      case 7:
+      case 8:
+      case 9:
+      case 10:
+        print('$number is small');
+        break;
+      case 11 ... 100:
+        print('$number is medium');
+        break;
+      default:
+        print('$number is large');
+    }
+  }
+}
